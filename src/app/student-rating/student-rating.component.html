@@ -1,0 +1,48 @@
+<div  class="imgBack">
+
+  <div class="container">
+    <mat-card>
+      <mat-card-title>Поставити оцінку студентові</mat-card-title>
+      <mat-card-content>
+        <form (submit)="onCreate(createform)" #createform="ngForm" >
+          <mat-form-field>
+            <input matInput
+                   type="text"
+                   name="fullName"
+                   ngModel
+                   required
+                   #brandInput="ngModel"
+                   placeholder="Вкажіть ФІО студента">
+            <mat-error *ngIf="brandInput.invalid">Вкажіть ФІО студента</mat-error>
+          </mat-form-field>
+
+
+          <mat-form-field>
+                      <input matInput
+                             type="text"
+                             name="rating"
+                             ngModel
+                             required
+                             #brandInput="ngModel"
+                             placeholder="Поставте оцінку студентові">
+                      <mat-error *ngIf="brandInput.invalid">Поставте оцінку</mat-error>
+                    </mat-form-field>
+
+
+
+
+
+          <br><br>
+
+          <button mat-raised-button color="primary" type="submit">Зберегти</button>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+
+
+
+</div>

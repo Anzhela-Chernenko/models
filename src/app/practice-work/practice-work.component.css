@@ -1,0 +1,31 @@
+mat-card {
+  max-width: 60%;
+  margin: auto auto auto auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+ mat-icon {
+   float: left;
+   color: navy;
+   margin-top: 4px;
+ }
+
+.imgBack {
+  background-image: url("../../assets/img/b1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: black;
+font-size: 24px;
+}
+

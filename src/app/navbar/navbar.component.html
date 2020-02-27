@@ -1,0 +1,97 @@
+<div>
+
+<mat-toolbar color="primary" class="sticky-top">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <span>Навчальна програма "Економіко-математичні моделі та ефективні алгоритми їх розв’язання"</span>
+    <span class="spacer"></span>
+    <div >
+      <a *ngIf="auth === false" routerLink="/" mat-button>
+          <mat-icon>power_settings_new</mat-icon>
+          Ввійти</a>
+        <a *ngIf="auth === false" routerLink="/register" mat-button>
+          <mat-icon>fingerprint</mat-icon>
+          Реєстрація</a>
+        <a *ngIf="auth === true" (click)="onLogout()" routerLink="/" mat-button>
+          <mat-icon>fingerprint</mat-icon>
+          Вийти</a>
+    </div>
+  </mat-toolbar-row>
+
+</mat-toolbar>
+<mat-sidenav-container id="mySt">
+   <mat-sidenav  #sidenav>
+
+
+    <mat-nav-list>
+      <ng-container *ngIf="admin === 1">
+      <a (click)="sidenav.toggle()" mat-list-item routerLink="/main">
+        <mat-icon>home</mat-icon>
+        Головна
+      </a>
+
+      <a (click)="sidenav.toggle()" mat-list-item routerLink="/admin-users">
+                    <mat-icon>border_color</mat-icon>
+                   Користувачі
+                  </a>
+       <a (click)="sidenav.toggle()" mat-list-item routerLink="/practice-work">
+                           <mat-icon>border_color</mat-icon>
+                          Практичні завдання
+                         </a>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="/adm-p-f">
+          <mat-icon>border_color</mat-icon>
+          Тестові завдання
+        </a>
+        <a (click)="sidenav.toggle()" mat-list-item routerLink="/">
+          <mat-icon>border_color</mat-icon>
+         Лекційний матеріал
+        </a>
+      <a (click)="sidenav.toggle()" mat-list-item routerLink="/show-student-rating2">
+                                 <mat-icon>border_color</mat-icon>
+                                Рейтинги
+                               </a>
+
+      </ng-container>
+
+      <ng-container *ngIf="admin === 0">
+      <a (click)="sidenav.toggle()" mat-list-item routerLink="/main">
+              <mat-icon>home</mat-icon>
+              Головна
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item routerLink="/lectures">
+              <mat-icon>border_color</mat-icon>
+              Лекії
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item routerLink="/practical">
+              <mat-icon>format_color_fill</mat-icon>
+              Практичні завдання
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item routerLink="/testwork">
+              <mat-icon>format_list_numbered</mat-icon>
+              Тестові завдання
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item routerLink="/rating">
+                    <mat-icon>star_rate</mat-icon>
+                    Рейтинги студента
+                  </a>
+
+              <a (click)="sidenav.toggle()" mat-list-item>
+                        <mat-icon>close</mat-icon> Приховати
+                      </a>
+
+    </ng-container>
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>
+</div>

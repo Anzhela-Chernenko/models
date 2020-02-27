@@ -1,0 +1,15 @@
+iframe {
+
+}
+
+
+
+h3 {
+  text-align: center;
+  font-weight: bold;
+}
+.imgBack {
+  background-image: url("../../assets/img/b1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

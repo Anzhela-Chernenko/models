@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+ul {
+  line-height: 180%;
+}
+
+mat-card {
+  max-width: 80%;
+  margin: auto auto auto auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.imgBack {
+  background-image: url("../../assets/img/b1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

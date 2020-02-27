@@ -1,0 +1,13 @@
+mat-card {
+  max-width: 60%;
+  margin: 70px auto auto auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+div {
+  background-image: url("../../assets/img/b1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}

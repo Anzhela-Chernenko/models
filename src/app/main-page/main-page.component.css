@@ -1,0 +1,37 @@
+mat-card {
+  max-width: 60%;
+  margin: auto auto auto auto;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+img.gifImg {
+  width: 200px;
+  height: auto;
+  float: left;
+  padding-right: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 18px;
+}
+
+p.myFont {
+  font-weight: bold;
+}
+
+.imgBack {
+  background-image: url("../../assets/img/b1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+router-outlet {
+  border: none;
+}
+

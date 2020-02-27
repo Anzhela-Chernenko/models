@@ -1,0 +1,30 @@
+<div style="height: calc(100vh - 50px)">
+
+<mat-card>
+  <div id="userFile">
+    <h3>Файли користувачів</h3>
+    <div>
+      <div *ngFor="let file of files" class="list-group-item list-group-item-action flex-column align-items-start">
+        <p class="myPfirst">ФІО: <span>{{file.fullName}}</span></p>
+        <p>Назва файлу: <span>{{file.fileUrl.replace('http://localhost:3000/uploads/', '')}}</span></p>
+        <a href="{{file.fileUrl}}"><button mat-raised-button color="primary" class="downloadFile">Завантажити на ПК</button></a>
+        <div class="form-group non-visible">
+          <input class="form-control  non-visible" type="text" [class.active]="item == activeItem" (click)="onSelectItem(item)" name="file" [(ngModel)]="file.fileUrl" value="{{file.fileUrl}}"/>
+        </div>
+        <div class="form-group non-visible">
+          <button  mat-raised-button color="primary" class="deleteButton" (click)="submit(file)">Видалити</button>
+        </div>
+        <div *ngIf="done">
+          <div>Отримано від серверу:</div>
+          <div>Імя: {{receivedUser.fileUrl}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </mat-card>
+
+
+
+  <app-student-rating></app-student-rating>
+  </div>
+

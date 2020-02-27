@@ -1,0 +1,153 @@
+<div style="height: calc(100vh - 50px); overflow: auto" class="imgBack">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<mat-card>
+<object>
+<p>
+    <a href="assets/pdf/l_3.pdf" class="characteristicOfBut" target="_blank"><mat-icon>save_alt</mat-icon><span class="sFont">Переглянути в PDF та</span>
+   <pre>
+   <span class="sColor">ЗАВАНТАЖИТИ</span></pre></a></p>
+
+
+</object>
+<div>
+<h1>ЛЕКЦІЯ 3.Модель з увігнутою функцією витрат</h1>
+<br>
+
+<p class="indeNtion">Розглянуту вище модель динамічного програмування можна використовувати при будь-яких функціях витрат. Особливий інтерес, однак, представляє окремий випадок завдання, при якому передбачається, що витрати на придбання є увігнутими функціями, тобто граничні витрати замовлення не зростають. Така ситуація виникає, наприклад, коли середня вартість одиниці замовлення c(y)/y є постійною.</p>
+<p class="indeNtion">Модель, в якій вартість одиниці замовлення не залежить від розміру партії, була вперше проаналізовано Вагнером і Уайтіном в 1958р. і названа моделлю Вагнера-Уайтіна. У цьому випадку загальні змінні витрати замовлення фіксовані і не залежать від розкладу замовлень, отже, можна не включати їх в цільову функцію.</p>
+<div class="TextCenter">
+<span><b>Алгоритм динамічного програмування</b></span>
+</div>
+<p class="indeNtion">Має місце наступне твердження [15].</p>
+<p class="indeNtion"><b>Теорема 3.1.</b> Будь-яка оптимальна стратегія - це стратегія замовлення при нульовому запасі, тобто стратегія, в який</p>
+<div class="imgCenter">
+<img src="assets/img/74.png">
+</div>
+<p class="indeNtion">Простим наслідком теореми 3.1 є те, що при оптимальній стратегії замовлення має розмір, необхідний для задоволення попиту на цілому числі наступних етапів.</p>
+<p class="indeNtion">Дана властивість значно спрощує процес вирішення завдання методом динамічного програмування. Залишок </p>
+<img src="assets/img/75.png"><span>в кінці періоду </span><img src="assets/img/76.png">
+<span>може приймати значення </span><img src="assets/img/77.png">
+<p class="indeNtion">Відповідно, розмір замовлення </p><img src="assets/img/78.png">
+<span>дорівнює або 0, або </span><img src="assets/img/79.png"><span>Тому</span>
+<div class="imgCenter">
+<img src="assets/img/80.png">
+</div>
+<p class="indeNtion">Запас на кінець останнього періоду повинен дорівнювати нулю.</p>
+<p class="indeNtion">Якщо початковий рівень запасу позитивний, то поки він не вичерпається, замовлення не розміщуються. Нехай </p>
+<img src="assets/img/81.png"><span>Тоді можна покласти </span><img src="assets/img/82.png">
+<span>і або вирішувати завдання з k-го етапу, або етапи 1, ..., k-1 включити до завдання з нульовим попитом.</span>
+<p class="indeNtion"><b>Приклад 3.2.</b> Розглянемо чотирьохетапну модель для наступних вихідних даних:</p>
+<div class="positText">
+<span><b>Таблиця 3.5</b></span>
+</div>
+<div class="imgCenter">
+<img src="assets/img/83.png">
+</div>
+<p class="indeNtion">Витрати на зберігання одиниці продукції протягом одного етапу постійні і рівні 1. Витрати на закупівлю одиниці продукції становлять 2 на всіх етапах. Вихідний запас дорівнює 15 одиниць.</p>
+<p class="indeNtion">Отримаємо рішення алгоритмом прямої прогонки. Попит на першому етапі зменшимо на 15 одиниць. Сумарні витрати на придбання дорівнюють </p>
+<img src="assets/img/84.png"><span>і не залежать від розкладу замовлень, тому далі ці витрати в цільової функції не враховуємо.</span>
+<p class="indeNtion">Крок 1. </p><img src="assets/img/85.png"><span>приймає значення </span>
+<img src="assets/img/86.png"><img src="assets/img/87.png">
+<div class="positText">
+<span><b>Таблиця 3.6</b></span>
+</div>
+<div class="imgCenter">
+<img src="assets/img/88.png">
+</div>
+<p class="indeNtion">Крок 2.</p><img src="assets/img/89.png"><span>може дорівнювати </span>
+<img src="assets/img/90.png"><img src="assets/img/91.png"><img src="assets/img/92.png">
+<p class="indeNtion">Крок 3. </p><img src="assets/img/93.png">
+<img src="assets/img/94.png"><img src="assets/img/95.png">
+<p class="indeNtion">Крок 4. </p><img src="assets/img/96.png">
+<img src="assets/img/97.png"><img src="assets/img/98.png"><span>Далі отримуємо,</span>
+<img src="assets/img/99.png"><img src="assets/img/100.png"><img src="assets/img/101.png">
+<div class="TextCenter">
+<span><b>Мережевий алгоритм</b></span>
+</div>
+<p class="indeNtion">Завдання допускає також наступну інтерпретацію. Побудуємо ациклічні мережу з вузлами </p>
+<img src="assets/img/102.png"><span>і дугами </span><img src="assets/img/103.png">
+<p class="indeNtion">Довжина</p><img src="assets/img/104.png"><span>- це вартість замовленого в період i для задоволення попиту на етапах </span>
+<img src="assets/img/105.png"><img src="assets/img/106.png"><img src="assets/img/107.png">
+<img src="assets/img/108.png"><span>попит від періоду k до періоду s. Якщо питомі витрати зберігання постійні, останній доданок дорівнює</span>
+<img src="assets/img/109.png"><img src="assets/img/110.png">
+<p class="indeNtion">Довжина найкоротшого шляху від вузла 1 до вузла T+1 в цій мережі - мінімальна вартість задоволення попиту періодів 1-Т, вузли цього шляху відповідають періодам, в які робляться замовлення.</p>
+<p class="indeNtion">Приклад 3.3. Розглянемо задачу з прикладу 3.2. Як і раніше, вважаємо, </p>
+<img src="assets/img/111.png"><span>змінні витрати на закупівлю не враховуються, тобто</span>
+<img src="assets/img/112.png">
+<p class="indeNtion">Складемо матрицю довжин дуг. Можна скористатися тим, що</p>
+<img src="assets/img/113.png"><img src="assets/img/114.png"><span>Наприклад,</span>
+<img src="assets/img/115.png"><span>і так далі.</span>
+<p class="indeNtion">Для пошуку найкоротшого шляху використовуємо наступний алгоритм. Вузлам мережі 1,2, ... послідовно присвоюємо мітки, </p>
+<img src="assets/img/116.png"><img src="assets/img/117.png"><span>Мітка вузла T+1 - довжина найкоротшого шляху. Дуга (i, j) лежить на найкоротшому шляху, якщо </span>
+<img src="assets/img/118.png">
+<div class="positText">
+<span><b>Таблиця 3.7</b></span>
+</div>
+<div class="imgCenter">
+<img src="assets/img/119.png">
+</div>
+<p class="indeNtion">Отримуємо</p><img src="assets/img/120.png"><img src="assets/img/121.png">
+<img src="assets/img/122.png"><img src="assets/img/123.png"><span>У таблиці підкреслені довжини дуг, які доставляють мінімум при визначенні міток. Таким чином, знаходимо, що замовлення розміщуються в моменти 4, 2 і 1, розміри замовлень </span>
+<img src="assets/img/124.png"><img src="assets/img/125.png"><img src="assets/img/126.png">
+<p class="indeNtion"><b>Теорема 3.2.</b> Нехай t - останній період, в який зроблений замовлення в оптимальної стратегії замовлення для T-періодної завдання. Тоді для будь-якої заданої довжини T’>T останнє замовлення може бути розміщений тільки на етапі j≥T’. Крім того, якщо t=T, в оптимальному рішенні T’ - пері одної завдання</p>
+<img src="assets/img/127.png">
+<p class="indeNtion">Таким чином, якщо замовлення розміщене в період t, оптимальна стратегія для періодів 1,2, ..., t-1 не залежить від попиту в періоди після t і, отже, можна використовувати модель Вагнера - Уайтіна, навіть якщо попит в майбутньому невідомий.</p>
+<div class="TextCenter">
+<span><b>Евристичний алгоритм Сільвера - Мила</b></span>
+</div>
+<p class="indeNtion">Оптимальна стратегія досить чутлива до зміни попиту. Тому, незважаючи на ефективність розглянутих методів вирішення задачі управління запасами, велике значення на практиці мають прості наближені алгоритми, засновані на інтуїтивних міркуваннях.</p>
+<p class="indeNtion">Розглянемо евристичний алгоритм, який можна застосовувати до вирішення завдань управління запасами, в яких витрати на закупівлю одиниці продукції постійні і однакові для всіх етапів.</p>
+<p class="indeNtion">Як і раніше, нехай </p><img src="assets/img/128.png"><span>- витрати на розміщення замовлення і зберігання на етапах i, ..., j-1, за умови, що замовлення розміщується на етапі i, тобто</span>
+<div class="imgCenter">
+<img src="assets/img/129.png">
+</div>
+<p class="indeNtion">Для поточного етапу i визначається період t*, що мінімізує середні витрати за період, тобто </p>
+<img src="assets/img/130.png">
+<p class="indeNtion">Функцію</p><img src="assets/img/131.png"><span>можна визначати за допомогою рекурентних співвідношень.</span>
+<div class="imgCenter">
+<img src="assets/img/132.png">
+</div>
+<p class="indeNtion">Обчислення проводяться, поки </p><img src="assets/img/133.png">
+<p class="indeNtion">Таким чином, алгоритм евристичного методу складається з наступних кроків.</p>
+<p class="indeNtion">0. i=1.</p>
+<p class="indeNtion">1. Визначається локальний мінімум t* функції </p><img src="assets/img/134.png">
+<span>з нерівностей</span>
+<div class="imgCenter">
+<img src="assets/img/136.png">
+</div>
+<p class="indeNtion">На етапі i розміщується замовлення обсягом </p><img src="assets/img/137.png">
+<span>для етапів i, ..., t*-1.</span>
+<p class="indeNtion">2. i= t*. Якщо i> T, обчислення закінчуються, розглянуто весь плановий період. Інакше перейти до кроку 1.</p>
+<p class="indeNtion"><b>Приклад 3.4. </b>Розглянемо застосування алгоритму до задачі з прикладу 3.2.</p>
+<p class="indeNtion">Ітерація 1. i=1.</p>
+<div class="positText">
+<span><b>Таблиця 3.8</b></span>
+</div>
+<div class="imgCenter">
+<img src="assets/img/138.png">
+</div>
+<p class="indeNtion">Локальний мінімум досягається при t*= 3, на першому етапі розміщується замовлення обсягом 61+26=87 одиниць для етапів 1 і 2.</p>
+<p class="indeNtion">Ітерація 2. i=3.</p>
+<div class="positText">
+<span><b>Таблиця 3.9</b></span>
+</div>
+<div class="imgCenter">
+<img src="assets/img/139.png">
+</div>
+<span>t*=5, на третьому етапі замовляється 90+67=157 одиниць продукції. Бо 5> 4, обчислення закінчені. Вартість зберігання і розміщення замовлення складе 124+252=376 одиниць, що на 4 одиниці (1,1%) більше, ніж при оптимальному рішенні.</span>
+
+
+
+
+
+
+
+
+</div>
+</mat-card>
+</div>
+</div>
+</div>
+</div>

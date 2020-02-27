@@ -1,0 +1,28 @@
+<div style="height: calc(100vh - 50px); overflow: hidden">
+  <mat-card>
+
+    <form (submit)="onlogin(loginform)" #loginform="ngForm">
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Email"
+               name="email"
+               required
+               email
+               #emailInput="ngModel"
+               ngModel>
+        <mat-error *ngIf="emailInput.invalid">Введіть дійсний Email</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput
+               placeholder="Пароль"
+               name="password"
+               ngModel>
+
+      </mat-form-field>
+
+      <button class="btn btn-primary" type="submit">Ввійти</button>
+    </form>
+  </mat-card>
+</div>

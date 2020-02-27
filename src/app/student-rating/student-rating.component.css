@@ -1,0 +1,23 @@
+.container {
+  max-width: 60%;
+  margin: 70px auto auto auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+div
+
+
+mat-card.mat-card {
+width: 200px;
+  height: 250px;
+}
+
+mat-card.mat-card {
+  float: right;
+  position: absolute;
+  left: 60px;
+  top: 30px;
+}

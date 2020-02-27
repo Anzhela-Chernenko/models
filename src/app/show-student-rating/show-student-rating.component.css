@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.mat-elevation-z8 {
+  max-width: 60%;
+  margin: 60px auto auto auto;
+}
+td.mat-cell.cdk-column-edit.mat-column-edit.ng-star-inserted {
+  display: none;
+}
